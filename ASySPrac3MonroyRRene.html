@@ -1,0 +1,379 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Pr&aacute;ctica 3</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-09-27"><meta name="DC.source" content="principal.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Pr&aacute;ctica 3</h1><!--introduction--><p>Integrantes del equipo</p><div><ul><li>Alarcon Camacho Aldo yosef</li><li>Islas Martinez Ceasar</li><li>Monroy Reza Rene</li><li>Ochoa Velasquez Jos&eacute; Abraham</li></ul></div><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Objetivos</a></li><li><a href="#2">Introducci&oacute;n</a></li><li><a href="#3">Compresi&oacute;n de la se&ntilde;al*</a></li><li><a href="#4">Expansi&oacute;n de la se&ntilde;al</a></li><li><a href="#5">Desarrollo</a></li><li><a href="#6">Problema 1</a></li><li><a href="#7">Problema 2</a></li><li><a href="#8">Problema 3</a></li><li><a href="#9">Grafica_1</a></li><li><a href="#10">Grafica_2</a></li><li><a href="#11">Grafica_3</a></li><li><a href="#12">Problema 4</a></li><li><a href="#13">Problema 5</a></li><li><a href="#14">Problema 6</a></li><li><a href="#15">Referencias</a></li></ul></div><h2>Objetivos<a name="1"></a></h2><div><ul><li>Manipulaci&oacute;n b&aacute;sica de MATLAB</li><li>Gr&aacute;ficas de Se&ntilde;ales reales y complejas discretas</li><li>Transformaci&oacute;n de se&ntilde;ales discretas (escalamiento y traslaciones)</li><li>Calculo de energ&iacute;a y poencia de se&ntilde;ales discretas</li></ul></div><h2>Introducci&oacute;n<a name="2"></a></h2><p><b>Se&ntilde;ales en tiempo discreto</b></p><p>Una se&ntilde;al de tiempo disctreto es b&aacute;sicamente una secuencia de numeros. Tales se&ntilde;ales surgen naturalmente en un tiempo inherente discreto como estudios de poblaci&oacute;n, problemas de amotrizaci&oacute;n, modelos de ingreso nacional y seguimiento por radar. Tamien pueden surgir como resultado del muestreo de se&ntilde;ales en tiempo continuo. Dichas se&ntilde;ales pueden denotarse como <img src="principal_eq17924167568066421134.png" alt="$x[n]$"> .</p><p><b>Escalamiento Horizontal de Se&ntilde;ales</b></p><p>La alteraci&oacute;n de la frecuencia de muestreo es algo similar al escalamiento de se&ntilde;ales en tiemoi continuo. Considere una se&ntilde;al <img src="principal_eq17924167568066421134.png" alt="$x[n]$"> comprimida por un factor <img src="principal_eq00802513524912003067.png" alt="$M$"> . Al comprimir una se&ntilde;al <img src="principal_eq17924167568066421134.png" alt="$x[n]$"> por el factor <img src="principal_eq00802513524912003067.png" alt="$M$"> se obtiene <img src="principal_eq04881459377206305205.png" alt="$x_{d}$"> dada por <img src="principal_eq03247884699899549177.png" alt="$x_{d}[n]=x[Mn]$"></p><p>Debido a que la restricci&oacute;n para se&ntilde;ales en tiempo discreto est&aacute;n definidas unicamente para valores enteros del argumento, debemos restringir <img src="principal_eq00802513524912003067.png" alt="$M$"> a valores enteros los valores de <img src="principal_eq02696895028348162006.png" alt="$x[Mn]$"> en <img src="principal_eq17931388607443749889.png" alt="$n=0,1,2,3...$"> son <img src="principal_eq02493019389325247506.png" alt="$x[0], x[M], x[2M], x[3M], ...$"> Esto significa que <img src="principal_eq02696895028348162006.png" alt="$x[Mn]$"> toma cada muestra de <img src="principal_eq00802513524912003067.png" alt="$M$"> de <img src="principal_eq17924167568066421134.png" alt="$x[n]$"> y elimina todas las muestras entre estos valores. Por esta raz&oacute;n, esta operaci&oacute;n es llamada diezmado.</p><p>En el caso del tiempo continuo, una cpmpresi&oacute;n del tiempo somplemente acelera la se&ntilde;al sin que exista p&eacute;rdidad de datos. En contraste, el diezmado de <img src="principal_eq17924167568066421134.png" alt="$x[n]$"> generalmente causa p&eacute;rdida de informaci&oacute;n. Para ciertas condiciones, por ejemplo, s&iacute; <img src="principal_eq17924167568066421134.png" alt="$x[n]$"> es el resultado de expandir alguna se&ntilde;al de tiempo continuo, entonces  <img src="principal_eq17133431374235690232.png" alt="$x_{d}[n]$"> puede todavia retener la informaci&oacute;n completa sobre <img src="principal_eq17924167568066421134.png" alt="$x[n]$"> . Se genera una se&ntilde;al interpolada en dos pasos; primero, expandimos <img src="principal_eq17924167568066421134.png" alt="$x[n]$"> por un factor entero <img src="principal_eq11904963258706611165.png" alt="$L$"> para obtener la se&ntilde;al expandida <img src="principal_eq09831480375569409565.png" alt="$x_{e}[n]$"> , como <img src="principal_eq00390258653488050949.png" alt="$x[n/L] n=0,L,2L,3L...$">  o <img src="principal_eq00202142981986870057.png" alt="$0$"> en otro caso.</p><p><b>Ejemplo</b></p><pre class="codeinput"><span class="comment">% Sea la se&ntilde;al $f[n]=xe^{-x}$</span>
+<span class="comment">%</span>
+f=@(x) x.*(exp(-x));
+n=0:10;
+stem(n,f(n),<span class="string">'MarkerFaceColor'</span>,[0 0 0],<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,[0 0 0]);
+xlabel(<span class="string">'n'</span>);
+grid(<span class="string">'on'</span>);
+ylabel(<span class="string">'x  [n]'</span>);
+title(<span class="string">'Funci&iacute;n original'</span>);
+</pre><img vspace="5" hspace="5" src="principal_01.png" alt=""> <h2>Compresi&oacute;n de la se&ntilde;al*<a name="3"></a></h2><pre class="codeinput">stem(n,f(2*n),<span class="string">'MarkerFaceColor'</span>,[0 0 0],<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,[0 0 0]);
+xlabel(<span class="string">'n'</span>);
+grid(<span class="string">'on'</span>);
+ylabel(<span class="string">'x  [n]'</span>);
+title(<span class="string">'Compresi&oacute;npor un factor 2'</span>);
+</pre><img vspace="5" hspace="5" src="principal_02.png" alt=""> <h2>Expansi&oacute;n de la se&ntilde;al<a name="4"></a></h2><pre class="codeinput">N=0:2:20;
+stem(N,f(N/2),<span class="string">'MarkerFaceColor'</span>,[0 0 0],<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,[0 0 0]);
+xlabel(<span class="string">'n'</span>);
+grid(<span class="string">'on'</span>);
+ylabel(<span class="string">'x  [n]'</span>);
+title(<span class="string">'Expansi&oacute;n un factor 2'</span>);
+</pre><img vspace="5" hspace="5" src="principal_03.png" alt=""> <h2>Desarrollo<a name="5"></a></h2><h2>Problema 1<a name="6"></a></h2><p>Crea una funci&oacute;n que se llame <i>fun1</i> y reciba dos parametros <img src="principal_eq01003107565813904020.png" alt="$\Omega$"> y <img src="principal_eq05508344529756732484.png" alt="$a$"> la funci&oacute;n debe regresar la evaluaci&oacute;n <img src="principal_eq03646802660506946535.png" alt="$f[n]=r^ncos[\Omega n]+ r^nsen(\Omega n)j$">, esta funci&oacute;n debe trabajar con <img src="principal_eq02250910504099747793.png" alt="$r\in R^+$">, <img src="principal_eq16652459112341690445.png" alt="$\Omega\in R$"> y <img src="principal_eq13105139821992525800.png" alt="$n\in  N^n$">.</p><pre class="codeinput">r=1.1;
+o=0.5;
+n=(-2:20);
+[f1,f2,f3]=fun1(r,o,n);
+</pre><h2>Problema 2<a name="7"></a></h2><p>Construya una funci&oacute;n que gr&aacute;fique funciones de <img src="principal_eq12888934164539987532.png" alt="$f:N\rightarrow R$"> en el formato de su elecci&oacute;n y pruebe su c&oacute;digo mostrando la gr&aacute;fica de <img src="principal_eq14492615976455928922.png" alt="$x[n]=na^nu[n]$"> vs <img src="principal_eq08984225997457563733.png" alt="$n$"> para <img src="principal_eq08133761054732296635.png" alt="$n\in {-2,...,10}$"> para <img src="principal_eq00212765013998882747.png" alt="$a=0.9$">.</p><pre class="codeinput">discreta=@(t)(t.*[(9/10).^t]);
+t=[-2:1:10];
+escalon=@(o)(o&gt;=0).*(1)+(o&lt;0).*(0);
+o=[-2:10];
+grafica(t,discreta(t).*escalon(o))
+</pre><img vspace="5" hspace="5" src="principal_04.png" alt=""> <h2>Problema 3<a name="8"></a></h2><p>Construya una funci&oacute;n que gr&aacute;fique funciones de <img src="principal_eq16894167298513186129.png" alt="$f:N\rightarrow R^2$"> en el formato de su elecci&oacute;n y pruebe su c&oacute;digo mostrando la gr&aacute;fica de la funci&oacute;n exponencial del primer problema. Reporte la gr&aacute;fica de <img src="principal_eq05380890773232186944.png" alt="$|f[n]|$"> vs <img src="principal_eq08984225997457563733.png" alt="$n$"> y <img src="principal_eq12048250087022819900.png" alt="$\angle f[n]$"> vs <img src="principal_eq08984225997457563733.png" alt="$n$"></p><h2>Grafica_1<a name="9"></a></h2><pre class="codeinput">funG(n,f1,f2);
+</pre><img vspace="5" hspace="5" src="principal_05.png" alt=""> <h2>Grafica_2<a name="10"></a></h2><pre class="codeinput">nor=abs(f3);
+fig2(n,nor)
+</pre><img vspace="5" hspace="5" src="principal_06.png" alt=""> <h2>Grafica_3<a name="11"></a></h2><pre class="codeinput">theta=atan2(f2,f1);
+angle(n,theta)
+</pre><img vspace="5" hspace="5" src="principal_07.png" alt=""> <h2>Problema 4<a name="12"></a></h2><p>Programe una funci&oacute;n que calcule la energ&iacute;a de una se&ntilde;al en tiemp discreto la fucion se debe llamar <i>energiadis</i>. La funci&oacute;n recibe dos param&eacute;tros de entrada: el vector de tiempo y las alturas asignadas. La funci&oacute;n regresa la energia de la se&ntilde;al y despliega la gr&aacute;fica de la se&ntilde;al. Crea una funci&oacute;n que calcule la energ&iacute;a de una se&ntilde;al en tiempo discreto</p><pre class="language-matlab">
+<span class="comment">% Enerigia Se&ntilde;ales en tiempo discreto </span>
+<span class="keyword">function</span> Ex=energiadis(t,fun)
+<span class="comment">%t es el vector de tiempo</span>
+<span class="comment">% fun es la funci&oacute;n a la que se le calcula la energ&iacute;a</span>
+X=fun(t);
+E=X.^2;
+Ex=sum(E);
+stem(t,X,<span class="string">'MarkerFaceColor'</span>,[0 0 0],<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,[0 0 0]);
+xlabel(<span class="string">'n'</span>);
+grid(<span class="string">'on'</span>);
+ylabel(<span class="string">'x  [n]'</span>);
+title(<span class="string">'Gr&aacute;fica de la Funci&oacute;n'</span>);
+<span class="keyword">end</span> 
+
+</pre><h2>Problema 5<a name="13"></a></h2><p>Resuleve el problema 3.1.1 c) de Lathi, aplicando la funci&oacute;n anterior</p><pre class="codeinput">t=-10:10;
+f=@(t) (t&lt;-3).*(0)+(t&gt;=-3 &amp; t&lt;=3).*(t)+(t&gt;3).*(0);
+Energia=energiadis(t,f)
+</pre><pre class="codeoutput">
+Energia =
+
+    28
+
+</pre><img vspace="5" hspace="5" src="principal_08.png" alt=""> <h2>Problema 6<a name="14"></a></h2><p>Resuelve el problema 3.2.3 de Lathi</p><pre class="codeinput"><span class="comment">%x[-n]</span>
+x1=[-3 -2 -1 0 1 2 3];
+y1=[3 2 1 0 -1 -2 -3];
+subplot(2,3,4);
+stem(x1,y1);
+xlabel(<span class="string">'x[-n]'</span>)
+grid <span class="string">on</span>
+title(<span class="string">'Incicso a)'</span>)
+<span class="comment">%</span>
+<span class="comment">%x[n+6]</span>
+x2=[-9 -8 -7 -6 -5 -4 -3];
+y2=[-3 -2 -1 0 1 2 3];
+subplot(2,3,2);
+stem(x2,y2);
+xlabel(<span class="string">'x[n+6]'</span>)
+grid <span class="string">on</span>
+title(<span class="string">'Incicso b)'</span>)
+<span class="comment">%</span>
+<span class="comment">%x[n-6]</span>
+x3=[3 4 5 6 7 8 9];
+y3=[-3 -2 -1 0 1 2 3];
+subplot(2,3,3);
+stem(x3,y3);
+xlabel(<span class="string">'x[n-6]'</span>)
+grid <span class="string">on</span>
+title(<span class="string">'Incicso c)'</span>)
+<span class="comment">%</span>
+<span class="comment">%x[3n]</span>
+x4=[-1 0 1];
+y4=[-3 0 3];
+subplot(2,3,4);
+stem(x4,y4);
+xlabel(<span class="string">'x[3n]'</span>)
+grid <span class="string">on</span>
+title(<span class="string">'Incicso d)'</span>)
+<span class="comment">%x[n/3]</span>
+x5=[-9 -6 -3 0 3 6 9];
+y5=[-3 -2 -1 0 1 2 3];
+subplot(2,3,5);
+stem(x5,y5);
+xlabel(<span class="string">'x[n/3]'</span>)
+grid <span class="string">on</span>
+title(<span class="string">'Incicso e)'</span>)
+<span class="comment">%</span>
+<span class="comment">%x[3-n]</span>
+x6=[0 1 2 3 4 5 6];
+y6=[3 2 1 0 -1 -2 -3];
+subplot(2,3,6);
+stem(x6,y6);
+xlabel(<span class="string">'x[3-n]'</span>)
+grid <span class="string">on</span>
+title(<span class="string">'Incicso f)'</span>)
+</pre><img vspace="5" hspace="5" src="principal_09.png" alt=""> <h2>Referencias<a name="15"></a></h2><div><ul><li>Cleve Moler. (2004). The Origins of MATLAB. 2019, de MathWorks Sitio web: https://www.mathworks.com/company/newsletters/articles/the-origins-of-matlab.html</li><li>maslinux. (2017). 3 Alternativas de C?digo abierto a MATLAB. 2019, de maslinux Sitio web: https://maslinux.es/3-alternativas-de-codigo-abierto-a-matlab/</li><li>B. P. Lathi, Linear systems and signals,Oxford University Press , 2005. Convolucion,procesamiento de se~nales.Recuperado el 6 de septiembre del 2019.https://ramaucsa.wordpress.com/2013/12/17/convolucion-procesamiento-de-senales/</li></ul></div><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Práctica 3
+% Integrantes del equipo
+% 
+% * Alarcon Camacho Aldo yosef
+% * Islas Martinez Ceasar
+% * Monroy Reza Rene
+% * Ochoa Velasquez José Abraham
+%
+%% Objetivos
+%
+% * Manipulación básica de MATLAB
+% * Gráficas de Señales reales y complejas discretas
+% * Transformación de señales discretas (escalamiento y traslaciones)
+% * Calculo de energía y poencia de señales discretas
+% 
+%
+%% Introducción 
+%
+% *Señales en tiempo discreto*
+% 
+% Una señal de tiempo disctreto es básicamente una secuencia de numeros. 
+% Tales señales surgen naturalmente en un tiempo inherente discreto
+% como estudios de población, problemas de amotrización, modelos de ingreso
+% nacional y seguimiento por radar. Tamien pueden surgir como resultado del
+% muestreo de señales en tiempo continuo.
+% Dichas señales pueden denotarse como $x[n]$ .
+%
+% 
+% *Escalamiento Horizontal de Señales*
+%
+% La alteración de la frecuencia de muestreo es algo similar al
+% escalamiento de señales en tiemoi continuo. Considere una señal $x[n]$
+% comprimida por un factor $M$ . 
+% Al comprimir una señal $x[n]$ por el factor $M$ se obtiene $x_{d}$ dada
+% por
+% $x_{d}[n]=x[Mn]$
+%
+% Debido a que la restricción para señales en tiempo discreto están
+% definidas unicamente para valores enteros del argumento, debemos
+% restringir $M$ a valores enteros los valores de $x[Mn]$ en $n=0,1,2,3...$
+% son $x[0], x[M], x[2M], x[3M], ...$ Esto significa que $x[Mn]$ toma
+% cada muestra de $M$ de $x[n]$ y elimina todas las muestras entre estos valores.
+% Por esta razón, esta operación es llamada diezmado. 
+%
+% En el caso del tiempo continuo, una cpmpresión del tiempo somplemente
+% acelera la señal sin que exista pérdidad de datos. En contraste, el diezmado 
+% de $x[n]$ generalmente causa pérdida de información. Para ciertas
+% condiciones, por ejemplo, sí $x[n]$ es el resultado de expandir alguna
+% señal de tiempo continuo, entonces  $x_{d}[n]$ puede todavia retener la 
+% información completa sobre $x[n]$ .
+% Se genera una señal interpolada en dos pasos; primero, expandimos $x[n]$ 
+% por un factor entero $L$ para obtener la señal expandida $x_{e}[n]$ , como 
+% $x[n/L] n=0,L,2L,3L...$  o $0$ en otro caso.
+%
+% *Ejemplo* 
+%
+
+% Sea la señal $f[n]=xe^{-x}$
+%
+f=@(x) x.*(exp(-x));
+n=0:10;
+stem(n,f(n),'MarkerFaceColor',[0 0 0],'LineWidth',2,'Color',[0 0 0]);
+xlabel('n');
+grid('on');
+ylabel('x  [n]');
+title('Funciín original');
+%%  Compresión de la señal*
+stem(n,f(2*n),'MarkerFaceColor',[0 0 0],'LineWidth',2,'Color',[0 0 0]);
+xlabel('n');
+grid('on');
+ylabel('x  [n]');
+title('Compresiónpor un factor 2');
+%% Expansión de la señal
+N=0:2:20;
+stem(N,f(N/2),'MarkerFaceColor',[0 0 0],'LineWidth',2,'Color',[0 0 0]);
+xlabel('n');
+grid('on');
+ylabel('x  [n]');
+title('Expansión un factor 2');
+
+%% Desarrollo
+%% Problema 1
+% Crea una función que se llame _fun1_ y reciba dos parametros $\Omega$ y 
+% $a$ la función debe regresar la evaluación $f[n]=r^ncos[\Omega n]+ r^nsen(\Omega n)j$,
+% esta función debe trabajar con $r\in R^+$, $\Omega\in R$ y $n\in  N^n$. 
+r=1.1;
+o=0.5;
+n=(-2:20);
+[f1,f2,f3]=fun1(r,o,n);
+%%  Problema 2
+% Construya una función que gráfique funciones de
+% $f:N\rightarrow R$ en el formato de su elección y pruebe
+% su código mostrando la gráfica de $x[n]=na^nu[n]$ vs $n$ para 
+% $n\in {-2,...,10}$ para $a=0.9$.
+discreta=@(t)(t.*[(9/10).^t]);
+t=[-2:1:10];
+escalon=@(o)(o>=0).*(1)+(o<0).*(0);
+o=[-2:10];
+grafica(t,discreta(t).*escalon(o))
+
+
+%% Problema 3
+% Construya una función que gráfique funciones de
+% $f:N\rightarrow R^2$ en el formato de su elección y pruebe
+% su código mostrando la gráfica de la función exponencial del primer
+% problema.
+% Reporte la gráfica de $|f[n]|$ vs $n$ y $\angle f[n]$ vs $n$
+%% Grafica_1
+
+funG(n,f1,f2);
+%% Grafica_2
+nor=abs(f3);
+fig2(n,nor)
+%% Grafica_3
+theta=atan2(f2,f1);
+angle(n,theta)
+%% Problema 4
+% Programe una función que calcule la energía de una señal en tiemp discreto
+% la fucion se debe llamar _energiadis_.
+% La función recibe dos paramétros de entrada: el vector de tiempo y las
+% alturas asignadas. La función regresa la energia de la señal y despliega 
+% la gráfica de la señal. 
+% Crea una función que calcule la energía de una señal en tiempo discreto
+%
+%
+% <include>energiadis.m</include> 
+%
+%
+%% Problema 5
+%
+% Resuleve el problema 3.1.1 c) de Lathi, aplicando la función anterior 
+% 
+t=-10:10;
+f=@(t) (t<-3).*(0)+(t>=-3 & t<=3).*(t)+(t>3).*(0);
+Energia=energiadis(t,f)
+%% Problema 6
+% Resuelve el problema 3.2.3 de Lathi
+%x[-n]
+x1=[-3 -2 -1 0 1 2 3];
+y1=[3 2 1 0 -1 -2 -3];
+subplot(2,3,4);
+stem(x1,y1);
+xlabel('x[-n]')
+grid on
+title('Incicso a)')
+%
+%x[n+6]
+x2=[-9 -8 -7 -6 -5 -4 -3];
+y2=[-3 -2 -1 0 1 2 3];
+subplot(2,3,2);
+stem(x2,y2);
+xlabel('x[n+6]')
+grid on
+title('Incicso b)')
+%
+%x[n-6]
+x3=[3 4 5 6 7 8 9];
+y3=[-3 -2 -1 0 1 2 3];
+subplot(2,3,3);
+stem(x3,y3);
+xlabel('x[n-6]')
+grid on
+title('Incicso c)')
+%
+%x[3n]
+x4=[-1 0 1];
+y4=[-3 0 3];
+subplot(2,3,4);
+stem(x4,y4);
+xlabel('x[3n]')
+grid on
+title('Incicso d)')
+%x[n/3]
+x5=[-9 -6 -3 0 3 6 9];
+y5=[-3 -2 -1 0 1 2 3];
+subplot(2,3,5);
+stem(x5,y5);
+xlabel('x[n/3]')
+grid on
+title('Incicso e)')
+%
+%x[3-n]
+x6=[0 1 2 3 4 5 6];
+y6=[3 2 1 0 -1 -2 -3];
+subplot(2,3,6);
+stem(x6,y6);
+xlabel('x[3-n]')
+grid on
+title('Incicso f)')
+
+%% Referencias
+%%
+%  
+% 
+% * Cleve Moler. (2004). The Origins of MATLAB. 2019, de MathWorks Sitio web: https://www.mathworks.com/company/newsletters/articles/the-origins-of-matlab.html
+% * maslinux. (2017). 3 Alternativas de C?digo abierto a MATLAB. 2019, de maslinux Sitio web: https://maslinux.es/3-alternativas-de-codigo-abierto-a-matlab/
+% * B. P. Lathi, Linear systems and signals,Oxford University Press , 2005. Convolucion,procesamiento de se~nales.Recuperado el 6 de septiembre del 2019.https://ramaucsa.wordpress.com/2013/12/17/convolucion-procesamiento-de-senales/
+% 
+##### SOURCE END #####
+--></body></html>
